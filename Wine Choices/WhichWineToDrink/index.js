@@ -232,7 +232,7 @@ var helper = {
 
         // get the speech for the child node
         var description = helper.getDescriptionForNode(context.attributes.currentNode);
-        var message = description + ', ' + repeatWelcomeMessage;
+        var message = description + '. ' + repeatWelcomeMessage;
 
         context.emit(':ask', message, message);
     },
