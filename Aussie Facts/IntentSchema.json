@@ -1,0 +1,21 @@
+// Github - https://github.com/alexa/skill-sample-nodejs-fact/tree/master/speechAssets﻿
+// Sampler code for Facts Template - https://s3.amazonaws.com/alexa-skills-kit-samples-cfn/cloudformation.json﻿
+// Youtube Instructions - https://www.youtube.com/watch?v=EU-8yDD8S3E&feature=youtu.be
+// ARN - arn:aws:lambda:us-east-1:444491341796:function:AussieFacts 
+
+{
+  "intents": [
+    {
+      "intent": "GetNewFactIntent"
+    },
+    {
+      "intent": "AMAZON.HelpIntent"
+    },
+    {
+      "intent": "AMAZON.StopIntent"
+    },
+    {
+      "intent": "AMAZON.CancelIntent"
+    }
+  ]
+}

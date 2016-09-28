@@ -1,0 +1,35 @@
+GetNewFactIntent a fact
+GetNewFactIntent an Aussie fact
+GetNewFactIntent an Australian fact
+GetNewFactIntent tell me a fact
+GetNewFactIntent tell me an Aussie fact
+GetNewFactIntent tell me an Australian fact
+GetNewFactIntent give me a fact
+GetNewFactIntent give me an Aussie fact
+GetNewFactIntent give me an Australian fact
+GetNewFactIntent tell me trivia
+GetNewFactIntent tell me an Aussie trivia
+GetNewFactIntent tell me an Australian trivia
+GetNewFactIntent give me trivia
+GetNewFactIntent give me an Aussie trivia
+GetNewFactIntent give me an Australian trivia
+GetNewFactIntent give me some information
+GetNewFactIntent give me some information about Australia
+GetNewFactIntent tell me something
+GetNewFactIntent give me something
+GetNewFactIntent gday tell me a fact
+GetNewFactIntent gday tell me an Aussie fact
+GetNewFactIntent gday tell me an Australian fact
+GetNewFactIntent gday give me a fact
+GetNewFactIntent gday give me an Aussie fact
+GetNewFactIntent gday give me an Australian fact
+GetNewFactIntent gday tell me trivia
+GetNewFactIntent gday tell me an Aussie trivia
+GetNewFactIntent gday tell me an Australian trivia
+GetNewFactIntent gday give me trivia
+GetNewFactIntent gday give me an Aussie trivia
+GetNewFactIntent gday give me an Australian trivia
+GetNewFactIntent gday give me some information
+GetNewFactIntent gday give me some information about Australia
+GetNewFactIntent gday tell me something
+GetNewFactIntent gday give me something
