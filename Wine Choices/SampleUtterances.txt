@@ -1,14 +1,24 @@
-
 DescriptionIntent {Description} please
 DescriptionIntent please {Description}
 DescriptionIntent {Description}
 DescriptionIntent can you {Description}
+
+DescriptionIntent {Description} wine please
+DescriptionIntent please {Description} wine
+DescriptionIntent {Description} wine
+DescriptionIntent can you {Description} a wine
+DescriptionIntent tell me about wine
+
+DescriptionIntent tell me more
 DescriptionIntent tell me about that
 DescriptionIntent description please
+
 AMAZON.StopIntent stop
 AMAZON.StopIntent off
 AMAZON.StopIntent shut up
+
 AMAZON.StartOverIntent start over
 AMAZON.StartOverIntent restart
 AMAZON.StartOverIntent start again
 AMAZON.StartOverIntent play again
+AMAZON.StartOverIntent more wine please

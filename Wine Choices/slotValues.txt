@@ -1,3 +1,6 @@
 tell me more
+tell me more about
+give me a recommendation on
+recommend me
 describe
 describe it
