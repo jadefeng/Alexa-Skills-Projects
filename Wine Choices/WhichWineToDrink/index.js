@@ -15,9 +15,7 @@ var states = {
 // Occasion—–> Flavor—–>Price
 
 // Questions
-        // For the sake of testing, moving the immediate YES to #8
-        var nodes = [{ "node": 1, "message": "Are you pairing this wine with a meal?", "yes": 8, "no": 5 },
-// var nodes = [{ "node": 1, "message": "Are you pairing this wine with a meal?", "yes": 2, "no": 5 },
+var nodes = [{ "node": 1, "message": "Are you pairing this wine with a meal?", "yes": 2, "no": 5 },
              { "node": 2, "message": "Does this meal include meat?", "yes": 4, "no": 3 },
              { "node": 3, "message": "Are you eating a dessert?", "yes": 11, "no": 10 },
              { "node": 4, "message": "Are you eating red meat like steak or lamb?", "yes": 12, "no": 9 },
@@ -26,14 +24,14 @@ var states = {
              { "node": 7, "message": "Do you like sparkling wines?", "yes": 8, "no": 15 },
 
 // Answers & descriptions
-             { "node": 8, "message": "Champagne", "yes": 0, "no": 0, "description": "Champagne can be made from nearly any grape type, and they contain carbon dioxide bubbles to create their fizziness. Technically, champagne is only made in the Champagne region in France. Comparable wines are called sparkling wines." },
-             { "node": 9, "message": "Pinot noir", "yes": 0, "no": 0, "description": "Pinot Noir is the primary red grape in France's Burgundy region. It produces smooth wines with ripe silky tannins and juicy red summer fruit. It is suitable for almost all ocassions and pairs well, like many white wine, with white meat or heavier taste profile vegetable fishes."},
-             { "node": 10, "message": "Sauvignon blanc", "yes": 0, "no": 0 , "description": "Sauvignon blanc is a versatile food-pairing wine for seafood, poultry, and vegetables. The dominating flavors range from sour green fruits of apples, pears and gooseberries through to tropical fruits of melon, mango and blackcurrant."},
-             { "node": 11, "message": "Port or sweet dessert wine", "yes": 0, "no": 0 , "description": "Port wine is made in the Northern part of Portugal along the Douro river. There are many types of port wines that vary in sweetness. Comparable wines include sherry and madeira."},
-             { "node": 12, "message": "Cabernet sauvignon", "yes": 0, "no": 0 , "description": "Cabernet savignon is best with simply prepared red meat. It is full-bodied, but firm and gripping when young, but lightens with age."},
-             { "node": 13, "message": "Rose", "yes": 0, "no": 0 , "description": "Rose wine is very versatile, but wonderful when chilled on hot days. Rose is a dry wine that is brighter and more refreshing than many red wines, but shares some characteristics with white wine."},
+             { "node": 8, "message": "Champagne", "yes": 0, "no": 0, "description": "Champagne can be made from nearly any grape type, and they contain carbon dioxide bubbles to create their fizziness. Technically, champagne is only made in the Champagne region in France. Comparable wines are called sparkling wines" },
+             { "node": 9, "message": "Pinot noir", "yes": 0, "no": 0, "description": "Pinot Noir is the primary red grape in France's Burgundy region. It produces smooth wines with ripe silky tannins and juicy red summer fruit. It is suitable for almost all ocassions and pairs well, like many white wine, with white meat or heavier taste profile vegetable fishes"},
+             { "node": 10, "message": "Sauvignon blanc", "yes": 0, "no": 0 , "description": "Sauvignon blanc is a versatile food-pairing wine for seafood, poultry, and vegetables. The dominating flavors range from sour green fruits of apples, pears and gooseberries through to tropical fruits of melon, mango and blackcurrant"},
+             { "node": 11, "message": "Port or sweet dessert wine", "yes": 0, "no": 0 , "description": "Port wine is made in the Northern part of Portugal along the Douro river. There are many types of port wines that vary in sweetness. Comparable wines include sherry and madeira"},
+             { "node": 12, "message": "Cabernet sauvignon", "yes": 0, "no": 0 , "description": "Cabernet savignon is best with simply prepared red meat. It is full-bodied, but firm and gripping when young, but lightens with age"},
+             { "node": 13, "message": "Rose", "yes": 0, "no": 0 , "description": "Rose wine is very versatile, but wonderful when chilled on hot days. Rose is a dry wine that is brighter and more refreshing than many red wines, but shares some characteristics with white wine"},
              { "node": 14, "message": "Zinfandel", "yes": 0, "no": 0 , "description": "Zinfandel is a very versatile grape. It has a zesty flavor with berry and pepper, and is a suitable full bodied wine for cold days. "},
-             { "node": 15, "message": "Moscato", "yes": 0, "no": 0 , "description": "Moscato pairs well with dessert and is delicious on it's own. It is sweet and fruity, with a characteristic grapefruity and musky aroma."},
+             { "node": 15, "message": "Moscato", "yes": 0, "no": 0 , "description": "Moscato pairs well with dessert and is delicious on it's own. It is sweet and fruity, with a characteristic grapefruity and musky aroma"},
 ];
 
 // this is used for keep track of visted nodes when we test for loops in the tree
@@ -42,7 +40,7 @@ var visited;
 // These are messages that Alexa says to the user during conversation
 
 // This is the intial welcome message
-var welcomeMessage = "Welcome to decision tree, are you ready to play?";
+var welcomeMessage = "Welcome to the wine recommendation game, are you ready to play?";
 
 // This is the message that is repeated if the response to the initial welcome message is not heard
 var repeatWelcomeMessage = "Say yes to start the game or no to quit.";
@@ -54,16 +52,16 @@ var promptToStartMessage = "Say yes to continue, or no to end the game.";
 var promptToSayYesNo = "Say yes or no to answer the question.";
 
 // This is the response to the user after the final question when Alex decides on what group choice the user should be given
-var decisionMessage = "I think you would make a good";
+var decisionMessage = "I think you would enjoy a good";
 
 // This is the prompt to ask the user if they would like to hear a short description of thier chosen wine or to play again
-var playAgainMessage = "Say 'tell me more' to hear a short description for this wine, or do you want to play again?";
+var playAgainMessage = "Say 'tell me more' to learn more about this wine, or do you want to play again?";
 
 // this is the help message during the setup at the beginning of the game
-var helpMessage = "I will ask you some questions that will identify what you would be best at. Want to start now?";
+var helpMessage = "I will ask you some questions that will identify what wine is suitable for you. Want to start now?";
 
 // This is the goodbye message when the user has asked to quit the game
-var goodbyeMessage = "Ok, see you next time!";
+var goodbyeMessage = "Ok, see you next time! Cheers!";
 
 var speechNotFoundMessage = "Could not find speech for node";
 
@@ -265,7 +263,7 @@ var helper = {
             context.handler.state = states.DESCRIPTIONMODE;
 
             // append the play again prompt to the decision and speak it
-            message = decisionMessage + ' ' + message + ' ,' + playAgainMessage;
+            message = decisionMessage + ' ' + message + ' . ' + playAgainMessage;
         }
 
         // set the current node to next node we want to go to
