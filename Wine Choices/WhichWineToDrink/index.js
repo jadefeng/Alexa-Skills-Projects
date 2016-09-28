@@ -42,41 +42,40 @@ var visited;
 // These are messages that Alexa says to the user during conversation
 
 // This is the intial welcome message
-var welcomeMessage = "Welcome to wine recommender, are you ready to begin?";
+var welcomeMessage = "Welcome to decision tree, are you ready to play?";
 
 // This is the message that is repeated if the response to the initial welcome message is not heard
-var repeatWelcomeMessage = "Say yes to start the recommendation or no to quit.";
+var repeatWelcomeMessage = "Say yes to start the game or no to quit.";
 
 // this is the message that is repeated if Alexa does not hear/understand the reponse to the welcome message
-var promptToStartMessage = "Say yes to continue, or no to end the recommendation.";
+var promptToStartMessage = "Say yes to continue, or no to end the game.";
 
-// This is the prompt during the recommender when Alexa doesnt hear or understand a yes / no reply
+// This is the prompt during the game when Alexa doesnt hear or understand a yes / no reply
 var promptToSayYesNo = "Say yes or no to answer the question.";
 
 // This is the response to the user after the final question when Alex decides on what group choice the user should be given
-var decisionMessage = "I think you will enjoy a good";
+var decisionMessage = "I think you would make a good";
 
-// This is the prompt to ask the user if they would like to hear a short description of their chosen wine or to begin again
-var playAgainMessage = "Say 'tell me more' to hear a short description of this wine. If you want another recommendation, say 'more wine please'!";
+// This is the prompt to ask the user if they would like to hear a short description of thier chosen wine or to play again
+var playAgainMessage = "Say 'tell me more' to hear a short description for this wine, or do you want to play again?";
 
-// this is the help message during the setup at the beginning of the recommender
-var helpMessage = "I will ask you some questions that will identify which wine will be most suitable for you. Want to start now?";
+// this is the help message during the setup at the beginning of the game
+var helpMessage = "I will ask you some questions that will identify what you would be best at. Want to start now?";
 
-// This is the goodbye message when the user has asked to quit the recommender
-var goodbyeMessage = "Ok, see you next time! Cheers!";
+// This is the goodbye message when the user has asked to quit the game
+var goodbyeMessage = "Ok, see you next time!";
 
-var speechNotFoundMessage = "Could not find the speech answer for this. Have another drink instead!";
+var speechNotFoundMessage = "Could not find speech for node";
 
-var nodeNotFoundMessage = "Could not find the right node for this message. How about a glass of red?";
+var nodeNotFoundMessage = "In nodes array could not find node";
 
-var descriptionNotFoundMessage = "Could not find description for this wine node. Have another bubbly on me!";
+var descriptionNotFoundMessage = "Could not find description for node";
 
-var loopsDetectedMessage = "A repeated path was detected on the wine node tree, please fix before continuing. In the meantime, why don't you enjoy a glass of white wine!";
+var loopsDetectedMessage = "A repeated path was detected on the node tree, please fix before continuing";
 
 var utteranceTellMeMore = "tell me more";
 
-// var utterancePlayAgain = "start again";
-var utterancePlayAgain = "more wine please";
+var utterancePlayAgain = "play again";
 
 // the first node that we will use
 var START_NODE = 1;
@@ -92,15 +91,22 @@ exports.handler = function (event, context, callback) {
 
 // set state to start up and  welcome the user
 var newSessionHandler = {
-    'NewSession': function () {
-        this.handler.state = states.STARTMODE;
-        this.emit(':ask', welcomeMessage, repeatWelcomeMessage);
-    }
+  'LaunchRequest': function () {
+    this.handler.state = states.STARTMODE;
+    this.emit(':ask', welcomeMessage, repeatWelcomeMessage);
+  },'AMAZON.HelpIntent': function () {
+    this.handler.state = states.STARTMODE;
+    this.emit(':ask', helpMessage, helpMessage);
+  },
+  'Unhandled': function () {
+    this.handler.state = states.STARTMODE;
+    this.emit(':ask', promptToStartMessage, promptToStartMessage);
+  }
 };
 
 // --------------- Functions that control the skill's behavior -----------------------
 
-// Called at the start of the recommender, picks and asks first question for the user
+// Called at the start of the game, picks and asks first question for the user
 var startGameHandlers = Alexa.CreateStateHandler(states.STARTMODE, {
     'AMAZON.YesIntent': function () {
 
@@ -110,6 +116,7 @@ var startGameHandlers = Alexa.CreateStateHandler(states.STARTMODE, {
         var loopFound = helper.debugFunction_walkNode(START_NODE);
         if( loopFound === true)
         {
+            // comment out this line if you know that there are no loops in your decision tree
              this.emit(':tell', loopsDetectedMessage);
         }
         // ---------------------------------------------------------------
@@ -171,7 +178,7 @@ var askQuestionHandlers = Alexa.CreateStateHandler(states.ASKMODE, {
         this.emit(':tell', goodbyeMessage);
     },
     'AMAZON.StartOverIntent': function () {
-        // reset the recommender state to start mode
+        // reset the game state to start mode
         this.handler.state = states.STARTMODE;
         this.emit(':ask', welcomeMessage, repeatWelcomeMessage);
     },
@@ -185,7 +192,7 @@ var descriptionHandlers = Alexa.CreateStateHandler(states.DESCRIPTIONMODE, {
 
  'AMAZON.YesIntent': function () {
         // Handle Yes intent.
-        // reset the recommender state to start mode
+        // reset the game state to start mode
         this.handler.state = states.STARTMODE;
         this.emit(':ask', welcomeMessage, repeatWelcomeMessage);
     },
@@ -203,25 +210,16 @@ var descriptionHandlers = Alexa.CreateStateHandler(states.DESCRIPTIONMODE, {
         this.emit(':tell', goodbyeMessage);
     },
     'AMAZON.StartOverIntent': function () {
-        // reset the recommender state to start mode
+        // reset the game state to start mode
         this.handler.state = states.STARTMODE;
         this.emit(':ask', welcomeMessage, repeatWelcomeMessage);
     },
     'DescriptionIntent': function () {
-        var reply = this.event.request.intent.slots.Description.value;
-        console.log('HEARD:' + reply);
+        //var reply = this.event.request.intent.slots.Description.value;
+        //console.log('HEARD: ' + reply);
+        helper.giveDescription(this);
+      },
 
-        if( reply === utteranceTellMeMore){
-            // If the user asks for "tell me more", then the description is given
-            helper.giveDescription(this);
-        } else if( reply === utterancePlayAgain) {
-            // reset the recommender state to start mode
-            this.handler.state = states.STARTMODE;
-            this.emit(':ask', welcomeMessage, repeatWelcomeMessage);
-        } else {
-             this.emit(':ask', playAgainMessage, playAgainMessage);
-        }
-    },
     'Unhandled': function () {
         this.emit(':ask', promptToSayYesNo, promptToSayYesNo);
     }
@@ -236,7 +234,7 @@ var helper = {
 
         // get the speech for the child node
         var description = helper.getDescriptionForNode(context.attributes.currentNode);
-        var message = description + ' ' + repeatWelcomeMessage;
+        var message = description + ', ' + repeatWelcomeMessage;
 
         context.emit(':ask', message, message);
     },
@@ -263,11 +261,11 @@ var helper = {
         // have we made a decision
         if (helper.isAnswerNode(nextNodeId) === true) {
 
-            // set the recommender state to description mode
+            // set the game state to description mode
             context.handler.state = states.DESCRIPTIONMODE;
 
             // append the play again prompt to the decision and speak it
-            message = decisionMessage + ' ' + message + ' , ' + playAgainMessage;
+            message = decisionMessage + ' ' + message + ' ,' + playAgainMessage;
         }
 
         // set the current node to next node we want to go to
@@ -281,8 +279,6 @@ var helper = {
 
         for (var i = 0; i < nodes.length; i++) {
             if (nodes[i].node == nodeId) {
-                console.log("here are the nodes - finding the description now")
-                console.log(nodes[i].description)
                 return nodes[i].description;
             }
         }
