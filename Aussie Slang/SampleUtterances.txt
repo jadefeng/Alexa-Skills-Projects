@@ -1,0 +1,20 @@
+
+RecipeIntent what's a {Word}
+RecipeIntent what's an {Word}
+RecipeIntent what is a {Word}
+RecipeIntent what is an {Word}
+RecipeIntent how can I {Word}
+RecipeIntent what does {Word} mean
+RecipeIntent what is the meaning of {Word}
+RecipeIntent teach me about {Word}
+RecipeIntent tell me about {Word}
+RecipeIntent what do you know about {Word}
+RecipeIntent can you tell me about {Word}
+RecipeIntent I don't know what is {Word}
+RecipeIntent I do not know what is {Word}
+RecipeIntent how can I {Word}
+RecipeIntent how can I make {Word}
+RecipeIntent tell me about {Word}
+RecipeIntent what can you tell me about {Word}
+RecipeIntent what do you know about {Word}
+
