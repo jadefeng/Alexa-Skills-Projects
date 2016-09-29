@@ -1,3 +1,5 @@
+This is a project to make more interesting skills with Amazon Echo. Let's make Alexa more smarter, helpful and Australian!
+
 #Aussie Facts
 Ask for a random fact about Australia!
 * ID - amzn1.ask.skill.cfb35d2f-1c59-42f9-94a2-61489db39afb
