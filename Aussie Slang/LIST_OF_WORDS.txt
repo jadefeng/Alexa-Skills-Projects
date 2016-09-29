@@ -1,26 +1,26 @@
-Arvo
-Barbie
-Bogan
-Bottle O
-Chockers
-Esky
-Fair Dinkum
-Grommet
-Mozzie
-Pash
-Ripper
-Roo
-Root
-Servo
-She’ll be right
-Sickie
-Slab
-Sook
-Stubbie holder
-Sweet as
-Ta
-Togs
-Thongs
-Tradie
-Ute
-Whinge
+arvo
+barbie
+bogan
+bottle O
+chockers
+esky
+fair dinkum
+grommet
+mozzie
+pash
+ripper
+roo
+root
+servo
+she’ll be right
+sickie
+slab
+sook
+stubbie holder
+sweet as
+ta
+togs
+thongs
+rradie
+ute
+whinge

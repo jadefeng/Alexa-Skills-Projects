@@ -1,7 +1,7 @@
 'use strict';
 
 var Alexa = require('alexa-sdk');
-var APP_ID = undefined; //OPTIONAL: replace with 'amzn1.echo-sdk-ams.app.[your-unique-value-here]';
+var APP_ID = 'arn:aws:lambda:us-east-1:444491341796:function:AussieSlangHowTo';
 var SKILL_NAME = 'Aussie Slang';
 var recipes = require('./recipes');
 
@@ -39,7 +39,7 @@ var handlers = {
             var speechOutput = 'I\'m sorry mate, I currently do not know what that means.';
             var repromptSpeech = 'What else can I help with?';
             if (wordName) {
-                speechOutput = 'the meaning of ' + wordName + ' is ';
+                speechOutput = 'The meaning of ' + wordName + ' is ' + recipes[wordName] + ".";
             } else {
                 speechOutput = 'that meaning. ';
             }
@@ -68,6 +68,6 @@ var handlers = {
         this.emit('SessionEndedRequest');
     },
     'SessionEndedRequest':function () {
-        this.emit(':tell', 'Goodbye!');
+        this.emit(':tell', 'Goodbye mate!');
     }
 };
