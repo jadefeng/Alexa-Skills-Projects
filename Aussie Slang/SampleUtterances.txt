@@ -1,4 +1,3 @@
-
 RecipeIntent what's a {Word}
 RecipeIntent what's an {Word}
 RecipeIntent what is a {Word}
@@ -17,4 +16,4 @@ RecipeIntent how can I make {Word}
 RecipeIntent tell me about {Word}
 RecipeIntent what can you tell me about {Word}
 RecipeIntent what do you know about {Word}
-
+RecipeIntent what do you know about {Word}

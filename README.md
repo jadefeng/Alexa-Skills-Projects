@@ -17,6 +17,11 @@ Some terms you can ask about: Arvo, Barbie, Bogan, Bottle O, Chockers, Esky, Fai
 * ID - amzn1.ask.skill.4c134de1-7deb-4a42-a72a-cad04667136e
 * Lambda - arn:aws:lambda:us-east-1:444491341796:function:AussieSlangHowTo
 
+Alexa, ask aussie slang what's a servo
+Alexa, ask aussie slang what is a mozzie
+Alexa, ask aussie slang what is the meaning of togs
+Alexa, ask aussie slang what is the meaning of bogan
+
 ## Other resources used:
 * Github - https://github.com/alexa/skill-sample-nodejs-fact/tree/master/speechAssets﻿
 * Sampler code for Facts Template - https://s3.amazonaws.com/alexa-skills-kit-samples-cfn/cloudformation.json﻿

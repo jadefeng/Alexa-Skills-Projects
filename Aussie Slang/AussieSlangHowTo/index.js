@@ -13,7 +13,8 @@ exports.handler = function(event, context, callback) {
 };
 
 var handlers = {
-    'NewSession': function () {
+    // 'NewSession': function () {
+    'LaunchRequest': function () {
         this.attributes['speechOutput'] = 'G\'day! Welcome to ' + SKILL_NAME + '. You can ask a question like, what\'s a' +
             ' barbie? Now, what can I help you with?';
         // If the user either does not reply to the welcome message or says something that is not
@@ -52,9 +53,9 @@ var handlers = {
         }
     },
     'AMAZON.HelpIntent': function () {
-        this.attributes['speechOutput'] = 'You can ask questions such as, what\'s the meaning of an Aussie slang word, or, you can say exit... ' +
+        this.attributes['speechOutput'] = 'You can ask questions such as, what\'s the meaning of mozzie, or, you can say exit... ' +
             'Now, what can I help you with?';
-        this.attributes['repromptSpeech'] = 'You can say things like, what\'s the meaning of an Aussie slang word, or you can say exit...' +
+        this.attributes['repromptSpeech'] = 'You can say things like, what\'s the meaning of mozzie, or you can say exit...' +
             ' Now, what can I help you with?';
         this.emit(':ask', this.attributes['speechOutput'], this.attributes['repromptSpeech'])
     },
