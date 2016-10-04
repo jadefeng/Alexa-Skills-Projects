@@ -10,6 +10,9 @@ Answer the questions about your occasion and meal pairing, and you'll get a reco
 * ID - amzn1.ask.skill.91ec4f47-ec90-42e5-b807-38eeca25cab0
 * Lambda - arn:aws:lambda:us-east-1:444491341796:function:WhichWineToDrink
 
+Alexa, open wine recommender
+Alexa, 
+
 #Aussie Slang
 Learn to speak Australian! Alexa will tell you about some of the most popular Aussie Slang terms.
 Some terms you can ask about: Arvo, Barbie, Bogan, Bottle O, Chockers, Esky, Fair Dinkum, Grommet, Mozzie, Pash, Ripper, Roo, Root, Servo, She’ll be right, Sickie, Slab, Sook, Stubbie holder, Sweet as, Ta, Togs, Thongs, Tradie, Ute, Whinge
