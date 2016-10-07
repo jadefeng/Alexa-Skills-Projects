@@ -1,0 +1,27 @@
+GetNewCheeseIntent what is the cheese of the day
+GetNewCheeseIntent what is the cheese today
+GetNewCheeseIntent what is today's cheese 
+GetNewCheeseIntent what is the recommended cheese today
+GetNewCheeseIntent what cheese do we eat today
+GetNewCheeseIntent what cheese should we eat today
+GetNewCheeseIntent what is the best cheese today
+GetNewCheeseIntent recommend me cheese today
+GetNewCheeseIntent recommend me a cheese today
+GetNewCheeseIntent recommend me a cheese
+GetNewCheeseIntent please recommend me a cheese today
+GetNewCheeseIntent please recommend me a cheese
+GetNewCheeseIntent recommend me a cheese please
+GetNewCheeseIntent recommend me cheese please
+GetNewCheeseIntent tell me about a cheese
+GetNewCheeseIntent tell me about cheese
+GetNewCheeseIntent what cheese
+GetNewCheeseIntent what cheese today
+GetNewCheeseIntent tell me a cheese fact
+GetNewCheeseIntent tell me about cheese
+GetNewCheeseIntent give me cheese
+GetNewCheeseIntent give me a cheese
+GetNewCheeseIntent a cheese
+GetNewCheeseIntent cheese
+GetNewCheeseIntent tell me something
+GetNewCheeseIntent give me something
+
